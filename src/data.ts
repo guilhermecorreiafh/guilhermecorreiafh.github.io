@@ -29,9 +29,10 @@ export const experience = [
         place: 'Santos Brasil',
         period: 'set/2025 – atual',
         items: [
-            'Manutenção e novas funcionalidades no PUE, sistema que acompanha a exportação de cargas pelo Portal Único do Siscomex',
+            'Manutenção e novas funcionalidades numa aplicação interna WinForms, o sistema é responsável por acompanhar a exportação de cargas pelo Portal Único do Siscomex',
             'Telas, consultas e rotinas em C#, WinForms e Oracle PL/SQL para as áreas operacionais do terminal',
-            'Instrumentação com OpenTelemetry e um monitor de serviços com alertas no Teams, no projeto White Belt',
+            'Instrumentação de serviços com OpenTelemetry para monitoramento e diagnóstico',
+            'Projeto Lean Six Sigma White Belt em equipe: automação em Python da extração e consolidação de dados para o fechamento trimestral financeiro',
         ],
     },
     {

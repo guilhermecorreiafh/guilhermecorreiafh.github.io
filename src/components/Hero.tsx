@@ -25,7 +25,7 @@ export function Hero() {
         <p className="mt-3 text-lg text-muted-foreground">Desenvolvedor .NET e React</p>
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
           Estagiário de TI na Santos Brasil, onde trabalho nos sistemas que ligam a operação do
-          terminal portuário ao Siscomex. Antes da TI trabalhei com logística, então gosto de
+          terminal portuário. Antes da TI trabalhei com logística, então gosto de
           software que resolve problema de operação de verdade.
         </p>
         <div className="mt-8 flex gap-3">
