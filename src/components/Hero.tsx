@@ -4,7 +4,7 @@ import { AnimatedSpan, Terminal, TypingAnimation } from '@/components/ui/termina
 import { links } from '@/data'
 
 const rows = [
-  ['ROLE', 'Estagiário de TI @ Santos Brasil'],
+  ['ROLE', 'Estagiário @ Santos Brasil'],
   ['STACK', 'C#, .NET, React, Oracle SQL'],
   ['FOCUS', 'Back-end .NET -> Full Stack'],
   ['LOCATION', 'São Paulo, SP'],
@@ -42,7 +42,7 @@ export function Hero() {
         </div>
       </div>
 
-      <Terminal className="w-full max-w-none">
+      <Terminal className="h-auto w-full max-w-none overflow-x-auto">
         <TypingAnimation>{'SQL> SELECT * FROM profile;'}</TypingAnimation>
         {rows.map(([key, value]) => (
           <AnimatedSpan key={key} className="whitespace-pre">

@@ -31,11 +31,12 @@ export function Experience() {
           <h3 className="text-sm font-semibold text-muted-foreground">Certificações</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {certifications.map(cert => (
-              <li key={cert.name} className="flex flex-wrap justify-between gap-2">
+              <li key={cert.name} className="flex items-baseline gap-3">
                 <span>{cert.name}</span>
-                <span className="text-muted-foreground">
-                  {cert.issuer} · {cert.hours}h · {cert.year}
-                </span>
+                <span className="flex-1 border-b border-dotted border-muted-foreground/40" />
+                <span className="hidden w-20 text-muted-foreground sm:block">{cert.issuer}</span>
+                <span className="w-12 text-right text-muted-foreground">{cert.hours}h</span>
+                <span className="w-10 text-right text-muted-foreground">{cert.year}</span>
               </li>
             ))}
           </ul>

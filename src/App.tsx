@@ -1,3 +1,4 @@
+import { Contact } from '@/components/Contact'
 import { Experience } from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Projects } from '@/components/Projects'
@@ -13,8 +14,8 @@ function App() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur">
         <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <a href="#inicio" className="font-mono text-sm font-semibold">
-            guilherme@portfolio
+          <a href="#inicio" className="hidden font-mono text-sm font-semibold sm:block">
+            guilhermecorreiafh@portfolio
           </a>
           <ul className="flex gap-6 text-sm text-muted-foreground">
             {sections.map(section => (
@@ -32,10 +33,7 @@ function App() {
         <Hero />
         <Projects />
         <Experience />
-
-        <section id="contato" className="scroll-mt-20 py-16">
-          <h2 className="text-2xl font-semibold">Contato</h2>
-        </section>
+        <Contact />
       </main>
 
       <footer className="border-t py-8 text-center text-sm text-muted-foreground">
