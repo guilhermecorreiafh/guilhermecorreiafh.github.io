@@ -1,47 +1,40 @@
-import { certifications, experience } from '@/data'
+import { experience } from '@/data'
 
 export function Experience() {
   return (
     <section id="experiencia" className="scroll-mt-20 py-16">
-      <h2 className="text-2xl font-semibold">Experiência</h2>
+      <p className="font-mono text-xs text-green-400">-- 02 · experiência</p>
+      <h2 className="mt-2 text-2xl font-semibold">Experiência</h2>
 
-      <ol className="mt-8 space-y-8 border-l pl-6">
+      <div className="mt-8 grid gap-4">
         {experience.map(item => (
-          <li key={item.role}>
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="font-semibold">
-                {item.role} <span className="text-muted-foreground">· {item.place}</span>
-              </h3>
-              <span className="text-xs text-muted-foreground">{item.period}</span>
+          <article
+            key={item.role}
+            className="flex gap-4 border bg-card p-5 transition-colors hover:border-green-400/50"
+          >
+            <img
+              src={item.logo}
+              alt={item.place}
+              className="size-14 shrink-0 border bg-white object-contain p-1.5"
+            />
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="font-semibold">{item.role}</h3>
+                <span className="text-xs text-muted-foreground">{item.period}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{item.place}</p>
+
+              {item.items.length > 0 && (
+                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.items.map(text => (
+                    <li key={text}>- {text}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-
-            {item.items.length > 0 && (
-              <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                {item.items.map(text => (
-                  <li key={text}>- {text}</li>
-                ))}
-              </ul>
-            )}
-          </li>
+          </article>
         ))}
-      </ol>
-
-      {certifications.length > 0 && (
-        <div className="mt-12">
-          <h3 className="text-sm font-semibold text-muted-foreground">Certificações</h3>
-          <ul className="mt-4 space-y-2 text-sm">
-            {certifications.map(cert => (
-              <li key={cert.name} className="flex items-baseline gap-3">
-                <span>{cert.name}</span>
-                <span className="flex-1 border-b border-dotted border-muted-foreground/40" />
-                <span className="hidden w-20 text-muted-foreground sm:block">{cert.issuer}</span>
-                <span className="w-12 text-right text-muted-foreground">{cert.hours}h</span>
-                <span className="w-10 text-right text-muted-foreground">{cert.year}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      </div>
     </section>
   )
 }

@@ -15,16 +15,19 @@ export function Hero() {
     <section id="inicio" className="grid items-center gap-10 py-20 md:grid-cols-2">
       <div>
         <div className="flex items-center gap-4">
-          <img
-            src="/foto.jpg"
-            alt="Foto de Guilherme Correia"
-            className="size-16 border object-cover"
-          />
+          <div className="relative shrink-0">
+            <img
+              src="/foto.jpg"
+              alt="Foto de Guilherme Correia"
+              className="size-20 border-2 border-green-400/60 object-cover p-0.5"
+            />
+            <span className="absolute -right-1 -bottom-1 size-3.5 border-2 border-background bg-green-400" />
+          </div>
           <h1 className="text-3xl font-semibold">Guilherme Correia</h1>
         </div>
         <p className="mt-3 text-lg text-muted-foreground">Desenvolvedor .NET e React</p>
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-          Estagiário de TI na Santos Brasil, onde trabalho nos sistemas que ligam a operação do
+          Estagiário de TI na Santos Brasil, onde trabalho nos sistemas que apoiam a operação do
           terminal portuário. Antes da TI trabalhei com logística, então gosto de
           software que resolve problema de operação de verdade.
         </p>
@@ -43,13 +46,18 @@ export function Hero() {
       </div>
 
       <Terminal className="h-auto w-full max-w-none overflow-x-auto">
-        <TypingAnimation>{'SQL> SELECT * FROM profile;'}</TypingAnimation>
+        <TypingAnimation className="text-green-400">{'SQL> SELECT * FROM profile;'}</TypingAnimation>
         {rows.map(([key, value]) => (
           <AnimatedSpan key={key} className="whitespace-pre">
             {`${key.padEnd(10)}${value}`}
           </AnimatedSpan>
         ))}
         <AnimatedSpan className="text-muted-foreground">4 rows selected.</AnimatedSpan>
+        <AnimatedSpan className="text-green-400">
+          <span>
+            SQL&gt; <span className="animate-pulse">▍</span>
+          </span>
+        </AnimatedSpan>
       </Terminal>
     </section>
   )
