@@ -1,3 +1,7 @@
+import { Experience } from '@/components/Experience'
+import { Hero } from '@/components/Hero'
+import { Projects } from '@/components/Projects'
+
 const sections = [
   { id: 'projetos', label: 'Projetos' },
   { id: 'experiencia', label: 'Experiência' },
@@ -25,20 +29,9 @@ function App() {
       </header>
 
       <main className="mx-auto max-w-4xl px-6">
-        <section id="inicio" className="py-24">
-          <h1 className="text-4xl font-semibold">Guilherme Correia</h1>
-          <p className="mt-3 text-lg text-muted-foreground">
-            Desenvolvedor .NET e React · Estagiário de TI na Santos Brasil
-          </p>
-        </section>
-
-        <section id="projetos" className="scroll-mt-20 py-16">
-          <h2 className="text-2xl font-semibold">Projetos</h2>
-        </section>
-
-        <section id="experiencia" className="scroll-mt-20 py-16">
-          <h2 className="text-2xl font-semibold">Experiência</h2>
-        </section>
+        <Hero />
+        <Projects />
+        <Experience />
 
         <section id="contato" className="scroll-mt-20 py-16">
           <h2 className="text-2xl font-semibold">Contato</h2>
