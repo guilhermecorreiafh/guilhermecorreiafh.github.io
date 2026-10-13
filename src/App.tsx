@@ -48,7 +48,7 @@ function App() {
             <TypingAnimation className="text-green-400">{'SQL> COMMIT;'}</TypingAnimation>
             <AnimatedSpan className="text-muted-foreground">Commit complete.</AnimatedSpan>
             <TypingAnimation className="text-green-400">{'SQL> EXIT;'}</TypingAnimation>
-            <AnimatedSpan>Desconectado de guilherme@portfolio.</AnimatedSpan>
+            <AnimatedSpan>Desconectado de guilhermecorreiafh@portfolio.</AnimatedSpan>
             <AnimatedSpan>Obrigado pela visita!</AnimatedSpan>
           </Terminal>
 
