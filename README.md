@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# guilhermecorreiafh.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meu portfólio pessoal: **[guilhermecorreiafh.github.io](https://guilhermecorreiafh.github.io)**
 
-Currently, two official plugins are available:
+![Prévia do portfólio](public/og.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Como eu passo boa parte do dia no Oracle, o site tem cara de terminal SQL: abre com um `SELECT * FROM profile;` e termina com um `COMMIT; EXIT;`. No meio ficam os projetos, a experiência, as certificações e as tecnologias que uso no dia a dia.
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React com TypeScript, Vite
+- Tailwind CSS e shadcn/ui
+- Terminal animado do Magic UI
+- Ícones das tecnologias pelo Devicon
+- Deploy automático no GitHub Pages com GitHub Actions
 
-## Expanding the ESLint configuration
+## Rodando localmente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Abre em http://localhost:5173.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Como está organizado
 
 ```
+src/
+  data.ts          textos do site: projetos, experiência, certificações e stack
+  components/      uma seção por arquivo (Hero, Projects, Experience...)
+public/
+  projetos/        imagens dos projetos
+  certificados/    PDFs das certificações
+  logos/           logos da experiência
+```
+
+Todo o conteúdo fica no `data.ts`. Pra adicionar um projeto ou uma certificação nova, é só acrescentar um item na lista, sem mexer nos componentes.
+
+## Deploy
+
+Cada push na `main` gera o build e publica no GitHub Pages pelo workflow em `.github/workflows/deploy.yml`.
